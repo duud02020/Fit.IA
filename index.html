@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fit.IA - Inteligência Artificial para Treinos Personalizados</title>
+  <meta name="description" content="Gere treinos inteligentes com IA, controle sua rotina, cadastre objetivos e gerencie suas sessões no calendário.">
+  
+  <!-- Fontes Google (Outfit) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Header Navigation -->
+  <header class="app-header">
+    <div class="brand-container">
+      <div class="brand-logo-badge">⚡</div>
+      <div class="brand-name">Fit.<span>IA</span></div>
+    </div>
+
+    <nav class="nav-tabs" aria-label="Navegação Principal">
+      <button class="nav-tab-btn active" data-tab="tab-generator" id="nav-btn-generator">
+        <span>🏋️‍♂️</span> Gerar Treino
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-calendar" id="nav-btn-calendar">
+        <span>📅</span> Calendário
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-profile" id="nav-btn-profile">
+        <span>👤</span> Perfil
+      </button>
+    </nav>
+
+    <div class="user-profile-header">
+      <div class="user-pill">
+        <div class="user-avatar-small" id="nav-user-avatar">A</div>
+        <span id="nav-user-name" style="font-weight: 600; font-size: 0.9rem;">Alexandre</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- ======================================================== -->
+    <!-- ABA 1: GERADOR DE TREINOS COM IA                        -->
+    <!-- ======================================================== -->
+    <section id="tab-generator" class="tab-content-view active">
+      <div class="hero-banner">
+        <div class="hero-pill-badge">✨ Powered by Generative AI</div>
+        <h1>Treinos Personalizados com a Potência da <span>Inteligência Artificial</span></h1>
+        <p>Defina suas metas, restrições e modalidade. A Fit.IA calcula a periodização biomecânica ideal para você.</p>
+      </div>
+
+      <div class="grid-2col">
+        <!-- Formulário de Parâmetros -->
+        <div class="glass-panel form-card">
+          <div class="form-title-group">
+            <h2>🎯 Configure seu Treino</h2>
+            <p>Escolha as diretrizes para a IA estruturar o plano ideal.</p>
+          </div>
+
+          <!-- Modalidades -->
+          <div class="form-group">
+            <label class="form-label">Modalidade de Treino</label>
+            <div class="selection-chips-grid" id="modality-chips">
+              <button type="button" class="chip-btn active" data-val="Academia/Musculação">
+                <span class="icon">🏋️</span>
+                <span>Musculação</span>
+              </button>
+              <button type="button" class="chip-btn" data-val="Calistenia">
+                <span class="icon">🤸</span>
+                <span>Calistenia</span>
+              </button>
+              <button type="button" class="chip-btn" data-val="CrossFit">
+                <span class="icon">🔥</span>
+                <span>CrossFit</span>
+              </button>
+              <button type="button" class="chip-btn" data-val="Corrida">
+                <span class="icon">🏃</span>
+                <span>Corrida</span>
+              </button>
+              <button type="button" class="chip-btn" data-val="Funcional">
+                <span class="icon">⚡</span>
+                <span>Funcional</span>
+              </button>
+              <button type="button" class="chip-btn" data-val="Pilates">
+                <span class="icon">🧘</span>
+                <span>Pilates</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Foco Principal -->
+          <div class="form-group">
+            <label class="form-label">Objetivo / Foco Principal</label>
+            <div class="selection-chips-grid" id="goal-chips">
+              <button type="button" class="chip-btn active" data-val="Ganho de massa">
+                <span class="icon">💪</span>
+                <span>Hipertrofia</span>
+              </button>
+              <button type="button" class="chip-btn" data-val="Perda de gordura">
+                <span class="icon">🔥</span>
+                <span>Queima Gordura</span>
+              </button>
+              <button type="button" class="chip-btn" data-val="Resistência">
+                <span class="icon">⏱️</span>
+                <span>Resistência</span>
+              </button>
+              <button type="button" class="chip-btn" data-val="Mobilidade">
+                <span class="icon">🌿</span>
+                <span>Mobilidade</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Nível e Frequência -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+            <div>
+              <label class="form-label" for="workout-level">Nível de Experiência</label>
+              <select class="form-select" id="workout-level">
+                <option value="Iniciante">Iniciante</option>
+                <option value="Intermediário" selected>Intermediário</option>
+                <option value="Avançado">Avançado</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label" for="workout-days">Frequência Semanal</label>
+              <select class="form-select" id="workout-days">
+                <option value="2">2 dias por semana</option>
+                <option value="3">3 dias por semana</option>
+                <option value="4" selected>4 dias por semana</option>
+                <option value="5">5 dias por semana</option>
+                <option value="6">6 dias por semana</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Observações / Lesões -->
+          <div class="form-group">
+            <label class="form-label" for="workout-notes">Restrições ou Observações (opcional)</label>
+            <textarea class="form-textarea" id="workout-notes" placeholder="Ex: Dor no ombro direito ao elevar braço, treino em casa com apenas halteres..."></textarea>
+          </div>
+
+          <button class="btn-primary" id="btn-generate-workout">
+            <span>⚡ Gerar Treino Inteligente</span>
+          </button>
+        </div>
+
+        <!-- Visualizador do Resultado do Treino -->
+        <div class="glass-panel workout-view-card" id="workout-result-container">
+          <div class="empty-state-box">
+            <div class="empty-state-icon">🤖</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Seu treino aparecerá aqui</h3>
+            <p style="color: var(--text-muted); max-width: 320px; font-size: 0.9rem;">
+              Escolha suas preferências ao lado e clique em <b>Gerar Treino</b> para criar um protocolo biomecanicamente alinhado.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- ABA 2: CALENDÁRIO DE TREINOS                             -->
+    <!-- ======================================================== -->
+    <section id="tab-calendar" class="tab-content-view">
+      <div class="calendar-layout">
+        <!-- Grade do Calendário -->
+        <div class="glass-panel calendar-container">
+          <div class="calendar-header-nav">
+            <h2 class="calendar-month-title" id="cal-current-month-title">Outubro de 2026</h2>
+            <div style="display: flex; gap: 0.5rem;">
+              <button class="cal-nav-btn" id="cal-prev-month">◀ Mês Anterior</button>
+              <button class="cal-nav-btn" id="cal-next-month">Próximo Mês ▶</button>
+            </div>
+          </div>
+
+          <div class="calendar-grid">
+            <div class="cal-day-header">Dom</div>
+            <div class="cal-day-header">Seg</div>
+            <div class="cal-day-header">Ter</div>
+            <div class="cal-day-header">Qua</div>
+            <div class="cal-day-header">Qui</div>
+            <div class="cal-day-header">Sex</div>
+            <div class="cal-day-header">Sáb</div>
+          </div>
+
+          <div class="calendar-grid" id="calendar-grid-cells" style="margin-top: 0.5rem;">
+            <!-- Células geradas via Javascript -->
+          </div>
+        </div>
+
+        <!-- Barra Lateral de Sessões Agendadas -->
+        <div class="glass-panel" style="padding: 1.5rem;">
+          <h3 style="font-size: 1.15rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span>🗓️</span> Sessões Agendadas
+          </h3>
+          <div id="scheduled-workouts-sidebar-list">
+            <!-- Lista dinâmica -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- ABA 3: PERFIL & CADASTRO DE USUÁRIO                     -->
+    <!-- ======================================================== -->
+    <section id="tab-profile" class="tab-content-view">
+      <div style="max-width: 650px; margin: 0 auto;">
+        <div class="glass-panel form-card">
+          <div class="form-title-group">
+            <h2>👤 Cadastro & Perfil de Atleta</h2>
+            <p>Gerencie seus dados e preferências registradas na API Fit.IA.</p>
+          </div>
+
+          <form id="register-form">
+            <div class="form-group">
+              <label class="form-label" for="reg-name">Nome Completo</label>
+              <input type="text" class="form-control" id="reg-name" required value="Alexandre Silva">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-email">E-mail</label>
+              <input type="email" class="form-control" id="reg-email" required value="alexandre@fitia.app">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-pass">Senha de Acesso</label>
+              <input type="password" class="form-control" id="reg-pass" required value="••••••••">
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+              <div>
+                <label class="form-label" for="reg-level">Nível Atual</label>
+                <select class="form-select" id="reg-level">
+                  <option value="Iniciante">Iniciante</option>
+                  <option value="Intermediário" selected>Intermediário</option>
+                  <option value="Avançado">Avançado</option>
+                </select>
+              </div>
+              <div>
+                <label class="form-label" for="reg-goal">Objetivo Principal</label>
+                <select class="form-select" id="reg-goal">
+                  <option value="Ganho de massa" selected>Ganho de massa</option>
+                  <option value="Perda de gordura">Perda de gordura</option>
+                  <option value="Resistência">Resistência</option>
+                  <option value="Mobilidade">Mobilidade</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary" id="btn-save-user">
+              <span>💾 Salvar / Cadastrar Usuário</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal de Agendamento Rápido -->
+  <div class="modal-overlay" id="schedule-modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 style="font-size: 1.25rem;">📅 Agendar Treino</h3>
+        <button class="modal-close-btn" id="close-schedule-modal">&times;</button>
+      </div>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.25rem;">
+        Agende o protocolo <strong id="schedule-workout-name" style="color: #fff;">Treino Selecionado</strong> para um dia específico no seu calendário.
+      </p>
+      <div class="form-group">
+        <label class="form-label" for="schedule-date-input">Data do Treino</label>
+        <input type="date" class="form-control" id="schedule-date-input">
+      </div>
+      <button class="btn-primary" id="confirm-schedule-btn" style="margin-top: 1rem;">
+        Confirmar Agendamento
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast Container para Alertas -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
